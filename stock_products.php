@@ -9,7 +9,64 @@
     $selectQuery = "SELECT * FROM products";
     $result = $conn->query($selectQuery);
 
+?>
 
+
+
+<div class="container py-5 my-5">
+  <h2>Products in stock</h2>
+  <p>Combine .table-dark and .table-striped to create a dark, striped table:</p>            
+  <table class="table table-dark table-striped">
+    <thead>
+      <tr>
+        <th>Product ID</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Quantity</th>
+        <th>Size</th>
+        <th>Weight</th>
+        <th>Cost per product</th>
+        <th>Total cost</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+          
+<?php
+
+
+    foreach ($result as $fetchData)
+    {
+        
+        
+       echo "<tr>" . "<td>" . $fetchData["Product_ID"] . "</td>" . 
+                    "<td>" . $fetchData["Product_Name"] . "</td>" .
+                    "<td>" . $fetchData["Product_Description"] . "</td>" .
+                    "<td>" . $fetchData["Product_Quantity"] . "</td>" .
+                    "<td>" . $fetchData["Product_Size"] . "</td>" .
+                    "<td>" . $fetchData["Product_Weight"] . "</td>" .
+                    "<td>" . $fetchData["Product_CostPerProduct"] . "</td>" .
+                    "<td>" . $fetchData["Product_Quantity"] * $fetchData["Product_CostPerProduct"] . "</td>" . 
+               
+            "</tr>";
+
+       
+       
+       
+
+    }
+
+
+
+
+?>
+
+
+    </tbody>
+  </table>
+</div>
+
+<?php
 
     echo "<ul>";
 
@@ -38,6 +95,23 @@
 
     foreach ($result as $fetchData)
     {
+        
+        
+        
+        
+        
+        
+        
+        
+        //echo 
+        
+        
+        
+        
+        
+        
+        
+        
        echo "<li>" . $fetchData["Product_ID"] . 
                      $fetchData["Product_Name"] . 
                      $fetchData["Product_Description"] . 
@@ -61,6 +135,18 @@
     
 
 ?>
+
+
+
+
+
+
+
+
+
+
+
+
 
 <form class="form-inline" method="post" action="add_product.php">
     <div class="form-group">
