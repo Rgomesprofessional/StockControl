@@ -8,34 +8,65 @@
     $result = $conn->query($selectQuery);
 
 
+    
+?>
 
-    echo "<ul>";
+    
+    
+    
+<div class="container py-5 my-5">
+    <h2 class="text-uppercase">List of administrators</h2>
+  <!--<p>Combine .table-dark and .table-striped to create a dark, striped table:</p>-->            
+  <table class="table table-dark table-striped">
+    <thead class="text-center text-uppercase">
+        <tr>
+        <th>Administrator ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Password</th>
+        <th>Phone</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>Country</th>
+      </tr>
+    </thead>
+    <tbody class="text-center">
+      <tr>
+    
 
+<?php 
 
     foreach ($result as $fetchData)
     {
-       echo "<li>" . $fetchData["Administrator_ID"] . 
-                     $fetchData["Administrator_Name"] . 
-                     $fetchData["Administrator_Email"] . 
-                     $fetchData["Administrator_Password"] .
-                     $fetchData["Administrator_Phone"] . 
-                     $fetchData["Administrator_Address"] . 
-                     $fetchData["Administrator_City"] . 
-                     $fetchData["Administrator_Country"] . 
-            "</li>";
+        
+        
+        
+        
+        
+       echo "<tr>" . "<td>" . $fetchData["Administrator_ID"] . "</td>" . 
+                    "<td>" . $fetchData["Administrator_Name"] . "</td>" .
+                    "<td>" . $fetchData["Administrator_Email"] . "</td>" .
+                    "<td>" . $fetchData["Administrator_Password"] . "</td>" .
+                    "<td>" . $fetchData["Administrator_Phone"] . "</td>" .
+                    "<td>" . $fetchData["Administrator_Address"] . "</td>" .
+                    "<td>" . $fetchData["Administrator_City"] . "</td>" .
+                    "<td>" . $fetchData["Administrator_Country"] . "</td>" . 
+               
+            "</tr>";
+        
+        
+ 
     }
 
 
- 
-
-    echo "</ul>";
-        
-    
-    
-    
-    
-
+  
 ?>
+          
+  
+    </tbody>
+  </table>
+</div>        
+          
 
 <form class="form-inline" method="post" action="add_administrator.php">
     <div class="form-group">
@@ -132,11 +163,4 @@
 
     require './footer.php';
 
-?><?php
-
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
+?>

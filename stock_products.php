@@ -14,11 +14,11 @@
 
 
 <div class="container py-5 my-5">
-  <h2>Products in stock</h2>
-  <p>Combine .table-dark and .table-striped to create a dark, striped table:</p>            
+    <h2 class="text-uppercase">Products in stock</h2>
+  <!--<p>Combine .table-dark and .table-striped to create a dark, striped table:</p>-->            
   <table class="table table-dark table-striped">
-    <thead>
-      <tr>
+    <thead class="text-center text-uppercase">
+        <tr>
         <th>Product ID</th>
         <th>Name</th>
         <th>Description</th>
@@ -29,7 +29,7 @@
         <th>Total cost</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody class="text-center">
       <tr>
           
 <?php
@@ -50,9 +50,6 @@
                
             "</tr>";
 
-       
-       
-       
 
     }
 
